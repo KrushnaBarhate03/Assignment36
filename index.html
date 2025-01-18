@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 36</title>
+    <style>
+        .container {
+            background-color: orange;
+            height: 200px;
+            width: 300px;
+            border-radius: 5px;
+            position: relative;
+            left: 40%;
+        }
+
+        .field {
+            margin: 10px;
+            position: absolute;
+            top: 30px;
+        }
+
+        .btn {
+            position: relative;
+            left: 62%;
+            top: 40px;
+        }
+
+        #para {
+            position: relative;
+            left: 5%;
+            top: 50px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align:center">Contact Book</h3>
+    <div class="container">
+
+        <input type="text" id="field" class="field" placeholder="Enter name">
+        <button type="button" onclick="searchnames()" class="btn">Search</button>
+        <p id="para"></p>
+    </div>
+
+    <script>
+        const contactbook = {
+            krushna: 1234567890,
+            pratik: 9876543210,
+            raj: 123456785,
+            dev: 8765213467,
+            sai: 324876510
+        }
+        function searchnames() {
+            const names = document.getElementById('field');
+            const name = names.value.toLowerCase();
+            const mobile = contactbook[name];
+            const result = document.getElementById('para');
+            if (mobile) {
+                result.innerText = `mobile number of ${name} is ${mobile}`;
+            }
+            else {
+                result.innerText = `contact are not found`
+
+            }
+
+        }
+
+    </script>
+</body>
+</html>
